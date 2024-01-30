@@ -1,0 +1,23 @@
+!SESSION 2013-09-02 09:25:48.429 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-09-02 09:31:09.799
+!MESSAGE Indexed 'DE1_SoC_ADC_bsp' (82 sources, 62 headers) in 2.30 sec: 981 declarations; 2,510 references; 118 unresolved inclusions; 5 syntax errors; 208 unresolved names (5.62%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-09-02 09:31:15.467
+!MESSAGE Indexed 'DE1_SoC_ADC' (0 sources, 13 headers) in 0.01 sec: 0 declarations; 0 references; 13 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+!SESSION 2013-11-07 14:57:47.258 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.epp.usagedata.recording 1 0 2013-11-07 14:59:01.956
+!MESSAGE Usage data upload to http://udc.eclipse.org/upload.php failed with error code 404.

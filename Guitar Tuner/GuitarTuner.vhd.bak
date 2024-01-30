@@ -1,0 +1,83 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity ADCReader is
+  port (
+    clk       : in std_logic;                      -- System clock
+    reset     : in std_logic;                      -- System reset
+    cs        : out std_logic;                     -- Chip select signal for ADC
+    data_out  : in std_logic;                      -- Data output signal from ADC
+    adc_data  : out std_logic_vector(11 downto 0)  -- ADC data
+  );
+end ADCReader;
+
+architecture Behavioral of ADCReader is
+  signal data_reg      : std_logic_vector(11 downto 0) := (others => '0');  -- Register to store ADC data
+  signal sample_enable : std_logic := '0';  -- Signal to enable ADC sampling
+  signal sample_count  : integer range 0 to 9999 := 0;  -- Counter to track sample count
+  signal sclk          : std_logic := '0';  -- Clock signal for ADC
+
+  -- Constants for desired sample rate
+  constant SAMPLE_RATE       : integer := 10000;  -- 10 kHz
+  constant SAMPLE_PERIOD     : integer := 50000;  -- System clock frequency divided by SAMPLE_RATE
+  constant SAMPLE_COUNT_MAX  : integer := SAMPLE_PERIOD - 1;
+
+  -- Internal state machine
+  type State is (Idle, Sampling);
+  signal current_state : State := Idle;
+begin
+  process (clk, reset)
+  begin
+    if reset = '1' then
+      current_state <= Idle;
+      data_reg <= (others => '0');
+      cs <= '1';     -- Deactivate chip select signal
+      sample_enable <= '0';
+      sample_count <= 0;
+    elsif rising_edge(clk) then
+      if current_state = Idle then
+        if sample_enable = '1' then
+          current_state <= Sampling;  -- Transition to Sampling state
+          sample_count <= 0;
+          cs <= '0';     -- Activate chip select signal
+          sclk <= '1';   -- Set clock signal to high
+        end if;
+      elsif current_state = Sampling then
+        if sample_count = SAMPLE_COUNT_MAX then
+          current_state <= Idle;  -- Transition to Idle state after desired sample period
+          cs <= '1';     -- Deactivate chip select signal
+          sclk <= '0';   -- Set clock signal to low
+        else
+          sclk <= not sclk;  -- Toggle clock signal for ADC sampling
+          sample_count <= sample_count + 1;
+        end if;
+      end if;
+    end if;
+  end process;
+
+  adc_data <= data_reg;  -- Output the ADC data
+
+  process (clk)
+  begin
+    if rising_edge(clk) then
+      if current_state = Sampling then
+        data_reg <= data_reg(10 downto 0) & data_out;  -- Shift and store data bits
+      end if;
+    end if;
+  end process;
+
+  -- Generate sample enable signal
+  process (clk)
+  begin
+    if rising_edge(clk) then
+      if current_state = Idle then
+        if sample_count = 0 then
+          sample_enable <= '1';  -- Enable ADC sampling
+        else
+          sample_enable <= '0';
+        end if;
+      end if;
+    end if;
+  end process;
+end Behavioral;

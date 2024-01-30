@@ -1,0 +1,189 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "gpio_out",
+					"strict" : false
+				},
+				{
+					"name" : "hexout0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hexout5[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mode_button",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "gpio_in",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
